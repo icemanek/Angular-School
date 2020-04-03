@@ -1,0 +1,288 @@
+<mat-card class="title"> <mat-icon>account_circle</mat-icon> Registration</mat-card>
+
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="registerNewUser()" #userForm="ngForm" autocomplete="off" ngNativeValidate>
+      <!-- Username -->
+      <mat-form-field class="form-group">
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="user.username"
+          id="username"
+          name="username"
+          placeholder="Username"
+          required
+          #username="ngModel"
+          minlength="5"
+          maxlength="20"/>
+
+        <mat-hint>Minimum 5 znaków: {{username.value?.length || 0}}/20</mat-hint>
+
+        <mat-error
+          *ngIf="username.invalid && (username.dirty || username.touched)"
+          class="alert alert-danger">
+
+          <mat-error *ngIf="username.hasError('required')">
+            <strong>Username is required!</strong>
+          </mat-error>
+
+          <mat-error *ngIf="username.errors.maxlength">
+            Name cannot be more than 20 characters long
+          </mat-error>
+
+          <mat-error *ngIf="username.errors.minlength">
+            Name must be at least 5 characters long
+          </mat-error>
+
+        </mat-error>
+      </mat-form-field>
+
+      <!-- First Name -->
+      <mat-form-field class="form-group">
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="user.firstName"
+          class="form-control"
+          id="firstName"
+          name="firstName"
+          placeholder="Firstname"
+          required
+          #firstName="ngModel"
+          minlength="3"
+          maxlength="30"/>
+
+        <mat-hint>Minimum 3 znaki: {{firstName.value?.length || 0}}/30</mat-hint>
+
+        <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+
+          <mat-error *ngIf="firstName.hasError('required')">
+            <strong>Firstname is required!</strong>
+          </mat-error>
+
+          <mat-error *ngIf="firstName.errors.maxlength">
+            Name cannot be more than 30 characters long
+          </mat-error>
+
+          <mat-error *ngIf="firstName.errors.minlength">
+            Name must be at least 3 characters long
+          </mat-error>
+
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Last Name -->
+
+      <mat-form-field class="form-group">
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="user.lastName"
+          minlength="2"
+          maxlength="30"
+          class="form-control"
+          id="lastName"
+          name="lastName"
+          placeholder="Lastname"
+          required
+          #lastName="ngModel"/>
+
+        <mat-hint>Minimum 2 znaki: {{lastName.value?.length || 0}}/30</mat-hint>
+        <mat-error
+          *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+
+          <mat-error *ngIf="lastName.hasError('required')">
+            <strong> Lastname is required!</strong>
+          </mat-error>
+
+          <mat-error *ngIf="lastName.errors.maxlength">
+            Name cannot be more than 30 characters long
+          </mat-error>
+
+          <mat-error *ngIf="lastName.errors.minlength">
+            <strong>Name must be at least 2 characters long</strong>
+          </mat-error>
+          
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Password -->
+      <mat-form-field class="form-group">
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          [(ngModel)]="user.password"
+          minlength="8"
+          maxlength="20"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="Password"
+          required
+          #password="ngModel"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"> 
+
+       <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+        <mat-hint>Minimum 8 znaków: {{password.value?.length || 0}}/20 , jedna duża litera, jedna cyfra, jeden znak specjalny</mat-hint>
+
+        <mat-error
+          *ngIf="password.invalid && (password.dirty || password.touched)">
+
+          <mat-error *ngIf="password.hasError('required')">
+            <strong>Password is required!</strong>
+          </mat-error>
+
+          <mat-error *ngIf="password.hasError('pattern')">
+            <strong
+              >Password must contain one lowercase character, one big character,
+              one number and one special character</strong>
+          </mat-error>
+
+          <mat-error *ngIf="password.errors.minlength">
+            <strong>Password must be at least 8 characters long</strong>
+          </mat-error>
+
+          <mat-error *ngIf="password.errors.maxlength">
+            Password can be 20 characters long
+          </mat-error>
+
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Confirm Password -->
+
+      <mat-form-field class="form-group">
+        <input
+          matInput
+          placeholder="Retype your password"
+          [type]="hide ? 'password' : 'text'"
+          ngModel
+          id="confirmPassword"
+          name="confirmPassword"
+          required
+          #confirmPassword="ngModel"
+          compare="password"/>    
+
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+        <mat-error
+          *ngIf="
+            confirmPassword.invalid &&
+            (confirmPassword.dirty || confirmPassword.touched)">
+          </mat-error>
+
+        <mat-error *ngIf="confirmPassword.hasError('required')">
+          <strong>Password confirm is required</strong>
+        </mat-error>
+
+        <mat-error *ngIf="confirmPassword.hasError('compare')">
+          <strong>Passwords must match!</strong>
+        </mat-error>
+
+      </mat-form-field>
+
+      <!-- Email -->
+
+      <mat-form-field class="form-group" >
+        <input
+          matInput
+          placeholder="Email"
+          [(ngModel)]="user.email"
+          #email="ngModel"
+          name="email"
+          required
+          pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"/>
+
+        <mat-error *ngIf="email.invalid && (email.dirty || email.touched)"></mat-error>
+
+        <mat-error *ngIf="email.hasError('pattern')">
+          <strong>Enter a valid email address</strong>
+
+        </mat-error>  <mat-error *ngIf="email.hasError('required')">
+          <strong>Email is required</strong>
+        </mat-error>
+
+      </mat-form-field>
+
+      <!-- <---Gender--->
+      <mat-form-field class="form-group">
+        <mat-label>Gender</mat-label>
+        <mat-select
+          [(ngModel)]="user.gender"
+          #gender="ngModel"
+          name="gender"
+          required>
+
+          <mat-option value="K">Female</mat-option>
+          <mat-option value="M">Male</mat-option>
+        </mat-select>
+
+        <mat-error *ngIf="gender.hasError('required')">
+          <strong>Gender is required</strong>
+        </mat-error>
+
+      </mat-form-field>
+
+      <!-- Licence -->
+      <mat-form-field class="form-group">
+        <mat-label>Licence</mat-label>
+        <mat-select
+          [(ngModel)]="user.licence"
+          #licence="ngModel"
+          name="licence"
+          required>
+
+          <mat-option value="Yes">Yes I have</mat-option>
+          <mat-option class="bad-option" value="No" disabled>I don't have - Sorry, you can't register!</mat-option>
+
+        </mat-select>
+        
+        <mat-error *ngIf="licence.hasError('required')">
+          <strong>Licence is required</strong>
+        </mat-error>
+      
+      </mat-form-field>
+
+      <!-- Birth -->
+      <mat-form-field class="form-group">
+        <input
+          matInput
+          [matDatepicker]="myDatepicker"
+          [min]="minDate"
+          [max]="maxDate"
+          [(ngModel)]="user.birth"
+          #birth="ngModel"
+          name="birth"
+          placeholder="Date of your birth"
+          class="form-control"
+          required
+          readonly/>
+
+        <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+
+        <mat-datepicker #myDatepicker></mat-datepicker>
+
+        <!-- touchUi jesli ma być na cały ekran -->
+
+        <mat-error *ngIf="birth.hasError('required')">
+          <strong>Birth date is required</strong>
+        </mat-error>
+        <mat-error *ngIf="birth.hasError">
+          <strong>You must have 18 years old</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-checkbox class="terms" required>
+        Accept
+        <a href="http://localhost:4200/user/all" target="_blank" 
+          >Terms and Conditions</a
+        ></mat-checkbox>
+
+      <button mat-raised-button color="primary" [disabled]="!userForm.valid">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  color:white;
+}
+ul {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  list-style: none;
+}
+.footer {
+  background-image: url('../../assets/images/asfalt.png');
+  background-repeat: repeat;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+a {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+a:hover {
+  color: red;
+  font-weight: 700;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.ft-title {
+  color: red;
+  font-weight: 700;
+  font-size: 1.375rem;
+  padding-bottom: 0.625rem;
+}
+
+
+.social-icons:hover {
+  fill: red;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+/* Footer main */
+.ft-main {
+  padding: 1.25rem 1.875rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 29.8125rem /* 477px */) {
+  .ft-main {
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (min-width: 77.5rem /* 1240px */) {
+  .ft-main {
+    justify-content: space-evenly;
+  }
+}
+.ft-main-item {
+  padding: 1.25rem;
+  min-width: 12.5rem;
+}
+
+/* Footer main | Newsletter form */
+form {
+  display: flex;
+}
+
+.footer-newsletter {
+  border: 1px red;
+  background-color: #212121;
+  color: #000000;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #000000;
+  padding-left: 10px;
+  padding-right: 20px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.footer-newsletter{
+  background-color: white;
+  border-radius: 5px;
+  color: red;
+}
+
+.footer-newsletter {
+  border: 1px solid white;
+  height: 40px;
+  color: #000000;
+  padding-left: 10px;
+  padding-right: 20px;
+  max-width: 300px;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 5000s ease-in-out 0s;
+  /* -webkit-text-fill-color: red; */
+}
+/* input color class */
+::ng-deep input.mat-input-element {
+  color: #000000;
+}
+
+
+/* underline border color on focused */
+::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple {
+  background-color: white;
+}
+
+.footer-button {
+  border: 1px red solid;
+  justify-content: center;
+  display: flex;
+  font-weight: 700;
+  width: 140px;
+  height: 40px;
+  background-color: red;
+  color: white;
+  margin-left: -5px;
+  margin-top: -1px;
+  border-radius: 0;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.footer-button:hover {
+  cursor: pointer;
+  color: black;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+/* Footer social */
+.ft-social {
+  padding: 0 1.875rem 1.25rem;
+}
+
+.ft-social-list {
+  display: flex;
+  justify-content: center;
+  border-top: 1px #777 solid;
+  padding-top: 1.25rem;
+}
+
+.ft-social-list li {
+  margin: 0.5rem;
+  font-size: 1.25rem;
+}
+/* Footer legal */
+.ft-legal {
+  padding: 0.9375rem 1.875rem;
+}
+
+.ft-legal-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ft-legal-list li {
+  margin: 0.125rem 0.625rem;
+  white-space: nowrap;
+}
+
+/* one before the last child */
+.ft-legal-list li:nth-last-child(2) {
+  flex: 1;
+}
+
+
+.mat-divider {
+  border-top-width: 2px red;
+  border-top-style: dashed;
+
+}

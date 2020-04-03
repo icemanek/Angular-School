@@ -1,0 +1,139 @@
+body {
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+}
+
+.example-card {
+  margin-left: 20px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  padding: 30px;
+  max-width: 400px;
+  background-image: url('../../assets/card-img/card-bg.svg');
+}
+
+.card-my {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 200px;
+  background: transparent;
+  /* background-image: url('../../assets/images/bg.svg');
+      background-repeat: no-repeat;
+    background-color: #303030; */
+}
+
+.example-card:hover {
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+}
+
+.more-button {
+  font-weight: 700;
+  width: 140px;
+  height: 40px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+}
+
+.more-button:hover {
+  font-weight: 700;
+  color: black;
+  background-color: white;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.card-button {
+  font-weight: 700;
+  width: 140px;
+  height: 40px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+}
+
+.card-button:hover {
+  font-weight: 700;
+  color: black;
+  background-color: white;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+mat-card-footer,
+mat-card-subtitle,
+mat-card-content {
+  font-family: "Rubik", sans-serif;
+  text-decoration: none;
+  color: rgb(133, 133, 133);
+}
+
+mat-card-header {
+  font-family: "Rubik", sans-serif;
+  text-decoration: none;
+  color: #fff;
+}
+
+.whole-carousels{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+input{
+  display: none;}
+
+.carusel{
+  position: relative;
+  width: 100%;
+  height: 600px;
+  max-height: 100vh;
+  margin: 20px auto;
+  overflow: hidden;
+  user-select: none;
+}
+
+.carusel__item {
+  position: absolute; 
+  z-index: 1;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: center no-repeat;
+  background-size: contain;
+  transition: left 0.5s, transform 0.5s;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.carusel__arrow {
+  display: none;
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-50%);
+  color: #000000;
+  background-color: #ffffff;
+  cursor: pointer;
+  padding: 10px; 
+  font-size: 28px;
+  line-height: 39px;
+  font-weight: bold;
+}
+
+input:checked+div~div~div~div .carusel__item {background-image: none !important;}
+input:checked+div *, input:checked+div+input+div .carusel__item, input:checked+div+input+div+input+div * {display: block;}
+
+input:checked+div .carusel__item {left: -100%; transform: scale(0.4);}
+input:checked+div+input+div .carusel__item {left: 0; transform: scale(1);}
+input:checked+div+input+div+input+div .carusel__item {left: 100%; transform: scale(0.4);}
+
+input:checked+div .carusel__arrow {left: 0;}
+input:checked+div+input+div+input+div .carusel__arrow {right: 0;}
+
+input:checked+div .carusel__arrow:before {content: '❰';}
+input:checked+div+input+div+input+div .carusel__arrow:before{content: '❱';}
+

@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.whole-content{
+  background-image: url("../../assets/images/moto-bg.svg");
+  background-repeat: no-repeat;
+  min-width: 100vh;
+  padding-top: 10px;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 685px;
+  margin: 10% auto 0 auto;
+  background: transparent;
+}
+
+.red {
+  flex: 0 1 70%;
+  padding-top: 80px;
+  max-height: 685px;
+  justify-content: center;
+}
+h1,
+h2,
+h3 {
+  display: flex;
+  justify-content: left;
+  padding-left: 190px;
+  padding-top: 50px;
+  color: white;
+  font-family: "Rubik", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 900;
+}
+h3 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.mat-card-actions {
+  justify-content: left;
+  display: flex;
+  padding-left: 190px;
+  padding-top: 50px;
+}
+
+.more-button {
+  font-size: 17px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  width: 120px;
+  height: 40px;
+  background-color: red;
+  color: white;
+  font-family: "Rubik", sans-serif;
+  border-radius: 5px;
+}
+
+.more-button:hover {
+  cursor: pointer;
+  font-weight: 700;
+  color: black;
+  background-color: white;
+   -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+
+.column-wrapper {
+  flex: 0 1 70%;
+  background: transparent;
+}
+.blue {
+  height: 50%;
+}
+.yellow {
+  height: 50%;
+}
+
+.green {
+  flex: 0 1 40%;
+}
+
+.container-two {
+  display: flex;
+  width: 100%;
+  height: 850px;
+  margin: 0 auto -60px auto;
+  background-image: url("../../assets/images/section2-ver2.svg");
+  background-repeat: no-repeat;
+}
+
+.red-two {
+  flex: 0 1 50%;
+  margin: 0;
+  margin-top: 60px;
+  height: 900px;
+}
+
+
+
+.column-wrapper-two {
+  flex: 0 1 70%;
+  margin: 0;
+  background: transparent;
+}
+.blue-two {
+display: flex;
+width: 100%;
+margin-top: 60px;
+}
+
+.home-image {
+  display: flex;
+  justify-content: right;
+  margin-top: 50px;
+  margin-left: 30px;
+  width: 900px;
+  height: 500px;
+}
+
+.container-three {
+  display: flex;
+  width: 100%;
+  height: 800px;
+  margin: 0 auto 0 auto;
+}
+
+.red-three {
+  flex: 0 1 100%;
+  height: 800px;
+  justify-content: center;
+ background-image: url('../../assets/images/section3-bg.svg');
+ background-repeat: no-repeat;
+}
+
+
+.cards {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 600px;
+  background: transparent;
+}
+
+.cards-content{
+  margin-left: 50px;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  padding: 20px;
+  height: 450px;
+  width: 450px;
+  float: left;
+  background-image: url('../../assets/card-img/card-bg.svg');
+  background-repeat: no-repeat;
+  box-shadow: rgb(87, 87, 87) 0px 0px 2px 2px, #000000 4px 4px 8px,
+    rgb(119, 119, 119) -2px -2px 8px;
+}
+
+.dark-h1{
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-family: "Rubik", sans-serif;
+  font-size: 50px;
+  font-weight: 900;
+  padding-top: 30px;
+}
+
+.card-header{
+  float: left;
+  font-weight: 900;
+  font-family: "Rubik", sans-serif;
+  font-size: 50px;
+  padding-top: 30px;
+  color: white;
+}
+
+.card-text{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-weight: 100;
+  font-family: "Rubik", sans-serif;
+  font-size: 20px;
+  padding-top: 40px;
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+  .example-card {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: 768px) {
+}

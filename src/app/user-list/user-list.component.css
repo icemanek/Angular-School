@@ -1,0 +1,17 @@
+
+table {
+  width: 100%;
+  font-family: "Rubik", sans-serif;
+  background-color: rgb(68, 68, 68);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+}
+
+.mat-header-cell {
+  color: white;
+  font-size: 16px;
+}

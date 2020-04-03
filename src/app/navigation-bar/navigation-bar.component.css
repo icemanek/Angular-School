@@ -1,0 +1,106 @@
+.sidenav-container {
+  margin: 0;
+  background: transparent;
+}
+.sidenav .mat-toolbar {
+  background: transparent;
+  color: #303030;
+}
+
+.mat-raised-button {
+  justify-content: center;
+  display: flex;
+  font-weight: 700;
+  width: 140px;
+  height: 40px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+}
+
+.mat-raised-button:hover {
+  justify-content: center;
+  display: flex;
+  font-weight: 700;
+  color: black;
+  background-color: white;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.sidenav {
+  width: 100%;
+  /* background-image: url('../../assets/images/asfalt.png');
+  background-repeat: repeat; */
+  background: transparent;
+  font-family: "Rubik", sans-serif;
+}
+
+mat-nav-list a {
+  font-weight: 900;
+  font-size: 25px;
+}
+.nav-normal {
+  overflow: hidden;
+  background: transparent;
+  color: black;
+}
+
+.main-name {
+  color: #ffff;
+  font-weight: 700;
+  text-shadow: 4px 3px 5px #000000;
+}
+.mat-nav-list a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.mat-nav-list a:hover {
+  color: red;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.logo {
+  width: 200px;
+  align-items: baseline;
+}
+
+.mat-toolbar a {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+.mat-toolbar a:hover {
+  color: red;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+@media (max-width: 768px) {
+  .mat-toolbar a {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .sidenav {
+    display: none;
+  }
+}

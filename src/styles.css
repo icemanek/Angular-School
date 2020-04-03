@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+html,
+body {
+  height: 100%;
+}
+html,
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 3px;
+  background-color: black;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: red;
+  outline: 1px solid #303030;
+}
