@@ -1,0 +1,44 @@
+
+<a *ngIf="sessionStorageUser; else localStorageUser">
+
+TEST
+
+</a>
+
+<div class="fff" *ngIf="!localStorageUser">
+<form *ngIf="!sessionStorageUser"  name="form" (ngSubmit)="f.form.valid && loginUser()" #f="ngForm" novalidate>
+  
+    <mat-form-field class="form-group">
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="model.username"
+          id="username"
+          name="username"
+          placeholder="Username"
+          required
+          #username="ngModel"
+         />
+      </mat-form-field>
+  
+  
+      <mat-form-field class="form-group">
+        <input
+          matInput
+          type="password"
+          [(ngModel)]="model.password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          required
+          #password="ngModel"
+         />
+      </mat-form-field>
+
+        <mat-checkbox [(ngModel)]="rememberMe" name="remember" >Remember me</mat-checkbox>
+
+      <button >Login</button>
+    
+</form>
+
+</div>

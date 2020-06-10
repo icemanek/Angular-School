@@ -22,50 +22,50 @@
           aria-label="Toggle sidenav"
           mat-icon-button
           (click)="drawer.toggle()"
-          *ngIf="isHandset$ | async"
-        >
+          *ngIf="isHandset$ | async">
+
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
         <span class="main-name">
+          
           <img
             src="../../assets/images/logo.svg"
             alt="logo"
             class="logo"
-            oncontextmenu="window.event.returnValue=false"
-          />
+            oncontextmenu="window.event.returnValue=false"/>
+
         </span>
         <span class="spacer"> </span>
-        <a mat-list-item href="http://localhost:4200/"> Home</a>
-        <a mat-list-item href="http://localhost:4200/courses">Kursy</a>
+        <a mat-list-item href="http://localhost:4200/"> Home </a>
+        <a mat-list-item href="http://localhost:4200/courses"> Kursy </a>
         <a mat-list-item href="#">Instruktorzy</a>
         <a mat-list-item href="#">Maszyny</a>
         <a mat-list-item href="#">Miejsca</a>
-        <a mat-list-item href="http://localhost:4200/user/all">
-          Lista uczniów</a
-        >
+        <a mat-list-item href="http://localhost:4200/user/all">Lista uczniów</a>
         <span class="spacer"> </span>
         <a mat-list-item></a>
-        <a mat-list-item href="http://localhost:4200/user/add">
+        
+        <a mat-list-item *ngIf="!currentUser" href="http://localhost:4200/user/add">
           <button mat-raised-button>
             <i class="material-icons">person_add</i> &nbsp; Zarejestruj
           </button>
         </a>
-        <a mat-list-item href="#">
+        <a mat-list-item *ngIf="!currentUser" href="http://localhost:4200/login">
           <button mat-raised-button>
             <i class="material-icons">account_circle</i> &nbsp; Zaloguj
           </button>
         </a>
+        
+        <a mat-list-item *ngIf="currentUser">
+         &nbsp; Witaj {{currentUser}}
+        </a>
+        <a mat-list-item *ngIf="currentUser">
+        <button mat-raised-button (click)="logout()">
+          Wyloguj
+        </button>
+      </a>
       </mat-toolbar>
       <ng-content></ng-content>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </body>
-
-<!-- <div class="phone-navbar">
-  <a  href="http://localhost:4200/">  <button mat-raised-button >Home  </button> </a>
-  <a  href="http://localhost:4200/courses"> <button mat-raised-button >Kursy </button></a>
-  <a  href="#">  <button mat-raised-button >Instruktorzy </button></a>
-  <a  href="#">  <button mat-raised-button >Maszyny </button></a>
-  <a  href="#">  <button mat-raised-button >Miejsca  </button></a>
-  <a  href="http://localhost:4200/user/all">  <button mat-raised-button > Lista uczniów  </button></a>
-</div> -->

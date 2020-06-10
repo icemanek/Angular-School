@@ -1,48 +1,76 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { User } from './user';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable, throwError } from "rxjs";
+import { User } from "./user";
+import { catchError } from "rxjs/operators";
+import { ToastrService } from "ngx-toastr";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class UserService {
-
-
-  constructor(private http: HttpClient) { }
-
+  constructor(private http: HttpClient, private toastrService: ToastrService) {}
 
   createUser(user: User): Observable<any> {
-    return this.http.post(`//localhost:8080/user/add`, user);
+    return this.http.post(`//localhost:8080/user/add`, user).pipe(
+      catchError((err) => {
+        this.toastrService.error(err.statusText);
+        return throwError(err);
+      })
+    );
   }
 
   getAll(): Observable<any> {
-    return this.http.get('//localhost:8080/user/all');
+    return this.http.get("//localhost:8080/user/all").pipe(
+      catchError((err) => {
+        this.toastrService.error(err.statusText);
+        return throwError(err);
+      })
+    );
   }
-
   confirmAccount(user: User): Observable<any> {
-    const baseUrl = '//localhost:8080/';
+    const baseUrl = "//localhost:8080/";
 
-    return this.http.put(baseUrl + 'user/confirm-account?token=' + 'window.param' , user);
+    return this.http
+      .put(baseUrl + "user/confirm-account?token=" + "window.param", user)
+      .pipe(
+        catchError((err) => {
+          this.toastrService.error(err.statusText);
+          return throwError(err);
+        })
+      );
   }
 
-  resetPassword(user: User): Observable<any>{
-    return this.http.post('//localhost:8080/password/forgot', user);
+  resetPassword(user: User): Observable<any> {
+    return this.http.post("//localhost:8080/password/forgot", user).pipe(
+      catchError((err) => {
+        this.toastrService.error(err.statusText);
+        return throwError(err);
+      })
+    );
   }
 
-  setNewPassword(user: User): Observable<any>{
-    return this.http.post('//localhost:8080/password/reset', user);
+  setNewPassword(user: User): Observable<any> {
+    return this.http.post("//localhost:8080/password/reset", user).pipe(
+      catchError((err) => {
+        this.toastrService.error(err.statusText);
+        return throwError(err);
+      })
+    );
   }
 
-  loginUser(user: User): Observable<any> {
+  loginUser(user: User) {
+    const url = "http://localhost:8080/login";
 
-    const username = user.username;
-    const password = user.password;
+    const headers = new HttpHeaders({
+      Authorization: "Basic" + btoa(user.username + ":" + user.password),
+    });
 
-    console.log(username, password);
-
-    return this.http.post(
-      '//localhost:8080/login',
-      {username, password});
+    return this.http.post(url, { headers, responseType: "json" }).pipe(
+      catchError((err) => {
+        this.toastrService.error(err.statusText);
+        return throwError(err);
+      })
+    );
   }
 }

@@ -4,8 +4,11 @@
   min-height: 100vh;
   font-family: "Rubik", sans-serif;
   margin: 0;
- background-image: url('../assets/images/new-bg.svg');
- background-repeat: no-repeat;
+  background: transparent;
+  /* background-image: url("../assets/images/new-bg2.svg");
+  background-repeat: no-repeat;
+  background-color: black; */
+  background-color: black;
 }
 
 .site-content {

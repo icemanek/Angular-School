@@ -6,8 +6,9 @@
 }
 
 .whole-content{
-  background-image: url("../../assets/images/moto-bg.svg");
+  background-image: url("../../assets/images/new-bg2.svg");
   background-repeat: no-repeat;
+  background-color: black;
   min-width: 100vh;
   padding-top: 10px;
 }
@@ -102,6 +103,7 @@ h3 {
   margin: 0 auto -60px auto;
   background-image: url("../../assets/images/section2-ver2.svg");
   background-repeat: no-repeat;
+  background-color: black;
 }
 
 .red-two {
@@ -110,8 +112,6 @@ h3 {
   margin-top: 60px;
   height: 900px;
 }
-
-
 
 .column-wrapper-two {
   flex: 0 1 70%;

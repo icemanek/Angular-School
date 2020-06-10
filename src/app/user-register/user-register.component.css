@@ -4,29 +4,24 @@ font-family: "Rubik", sans-serif;
 text-align: center;
 font-weight: 600;
 font-size: 28px;
+background:transparent;
 }
 
 .my-5{
-  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
   border:none;
   font-family: "Rubik", sans-serif;
 }
 
 .form-group  {
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding-top: 30px;
   color:white;
-}
-
-mat-form-field{
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
-mat-radio-group{
-  display: flex;
-  justify-content: space-around;
 }
 
 input:-webkit-autofill,
@@ -39,7 +34,7 @@ input:-webkit-autofill:active{
   transition: 5000s ease-in-out 0s;
   -webkit-text-fill-color: #ffffff;
   -webkit-box-shadow: 0 0 0 30px transparent inset !important;
-  padding-left: 10px;
+  padding-left: 20px;
   padding-right: 20px;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
@@ -52,11 +47,15 @@ input {
   background: transparent;
   border-radius: 5px;
   color: #ffffff;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 input:valid, ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label, .mat-input{
   color: greenyellow;
   caret-color: greenyellow;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 input:required:invalid {
@@ -64,49 +63,52 @@ input:required:invalid {
   color:red;
   height: 40px;
   color: #ffffff;
-  padding-left: 10px;
-  padding-right: 10px;
-  max-width: 350px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
   align-items: center;
   justify-content: center;
   transition: background-color 5000s ease-in-out 0s;
   -webkit-text-fill-color: red;
 }
-::ng-deep .mat-form-field-valid{
- background-color: greenyellow;
-}
+
 /* input color class */
 ::ng-deep .mat-input-element {
   color: #ffffff;
 }
 
 /* Change label color on focused */
-::ng-deep .mat-form-field-label {
+/* ::ng-deep .mat-form-field-label {
   color: #ffffff;
-}
+} */
 
 /* underline border color on focused */
 ::ng-deep .mat-focused {
   background:transparent;
 }
+
 .terms{
   display: flex;
   justify-content: center;
   align-items: center;
-  color:rgba(255,175,0,1);
+  color:white;
 }
 
 .terms a{
-  color:rgba(255,175,0,1);
+  color:white;
+}
+
+.terms a:hover{
+  color: red;
 }
 
 ::ng-deep .mat-checkbox{
-  color:rgba(255,175,0,1);
+  color:white;
 }
  /* style dla selectow */
 
 ::ng-deep .mat-primary{
-  color:rgba(255,175,0,1);
+  color:white;
 }
 
 .bad-option{
@@ -114,26 +116,26 @@ input:required:invalid {
 }
 
 ::ng-deep .mat-option-text{
-  color:rgba(255,175,0,1);
+  color:white;
 }
 ::ng-deep .mat-select-value-text{
 
-  color:rgba(255,175,0,1);
+  color:white;
 }
 
 ::ng-deep .mat-select-arrow{
-  color:rgba(255,175,0,1);
+  color:white;
 }
 
 ::ng-deep .mat-select{
-  color:rgba(255,175,0,1);
+  color:white;
 }
 
 /* style dla selectow - koniec */
 
 ::ng-deep .mat-calendar-body-selected{
   color:black;
-  background-color: rgba(255,175,0,1);
+  background-color: white;
 }
 
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
@@ -155,7 +157,7 @@ color:#ffffff;
 }
 
 ::ng-deep .mat-datepicker-toggle {
-  color: rgba(255,175,0,1);
+  color:white;
  }
 
 :host ::ng-deep .mat-form-field-wrapper{
@@ -164,29 +166,28 @@ color:#ffffff;
   justify-content: center;
   align-items: center;
 }
+
 .mat-raised-button {
-  justify-content: center;
-  display: flex;
   font-weight: 700;
   width: 140px;
   height: 40px;
   background-color: red;
   color: white;
-  margin-left: -5px;
-  border-radius: 0;
-  border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px;
+  margin-top: 10px;
+  margin-left: 30%;
+  border-radius: 5px;
 }
 
 .mat-raised-button:hover {
-  justify-content: center;
-  display: flex;
   font-weight: 700;
   color: black;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
 
+.mat-raised-button:disabled{
+  color: #ffffff;
+}
 
 .error{
   font-family: "Rubik", sans-serif;

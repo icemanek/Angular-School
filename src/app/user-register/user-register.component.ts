@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../user.service';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ErrorDialogComponentComponent } from '../error-dialog-component/error-dialog-component.component';
+
 
 @Component({
   selector: 'app-user-register',
@@ -9,7 +12,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./user-register.component.css']
 })
 export class UserRegisterComponent{
-
+  terms: boolean;
   hide = true;
   user: User;
   minDate: Date;
@@ -40,12 +43,17 @@ export class UserRegisterComponent{
 
 
   registerNewUser() {
-    this.userService.createUser(this.user).subscribe(result => this.gotoUserList());
-  }
+
+    this.userService.createUser(this.user)
+    .subscribe(
+      result => this.gotoUserList(),
+      //  error => this.errrr.openDialog(error.error.message)
+       // error => window.alert(error.error.message)
+        
+        );}
+
 
   gotoUserList() {
     this.router.navigate(['/user/all']);
   }
-
-
 }

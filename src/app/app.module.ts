@@ -16,7 +16,7 @@ import { MatDividerModule } from '@angular/material/divider';
  import {MatTreeModule} from '@angular/material/tree';
  import { MatButtonModule } from '@angular/material/button';
 import { FooterBarComponent } from './footer-bar/footer-bar.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { A11yModule } from '@angular/cdk/a11y';
@@ -40,7 +40,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select'
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { CompareValidatorDirective } from './shared/compare-validator.directive';
-
+import { LoginPageComponent } from './login-page/login-page.component';
+import { MatDialogModule } from "@angular/material/dialog";
+import { ErrorDialogComponentComponent } from './error-dialog-component/error-dialog-component.component';
+import { ToastrModule } from "ngx-toastr";
 
 const appRoutes: Routes = [
 
@@ -78,14 +81,15 @@ const appRoutes: Routes = [
   //   path: 'password/reset',
   //   component: ResetPasswordComponent
   // },
-  // {
-  //   path: 'login',
-  //   component: LoginPageComponent
-  // },
+   {
+    path: 'login',
+    component: LoginPageComponent
+  },
 ];
 
 @NgModule({
   declarations: [
+    ErrorDialogComponentComponent,
     AppComponent,
     NavigationBarComponent,
     FooterBarComponent,
@@ -93,10 +97,12 @@ const appRoutes: Routes = [
     HomepageComponent,
     CoursesPageComponent,
     UserRegisterComponent,
-    CompareValidatorDirective
+    CompareValidatorDirective,
+    LoginPageComponent,
+    ErrorDialogComponentComponent
   ],
   imports: [
-    
+    MatDialogModule,
     MatCheckboxModule,
     MatSelectModule,
     MatFormFieldModule,
@@ -128,10 +134,15 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ToastrModule.forRoot({
+      timeOut: 7000,
+      positionClass: "toast-center-center",
+      preventDuplicates: true,
+    }),
   ],
   exports: [
-    
+    MatDialogModule,
     MatCheckboxModule,
     MatSelectModule,
     MatDatepickerModule,
@@ -152,10 +163,12 @@ const appRoutes: Routes = [
     MatCarouselModule,
     FormsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    
     ],
   providers: [UserService],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ErrorDialogComponentComponent]
 })
 export class AppModule { }

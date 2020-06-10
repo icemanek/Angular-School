@@ -3,6 +3,9 @@
 <div class="card my-5">
   <div class="card-body">
     <form (ngSubmit)="registerNewUser()" #userForm="ngForm" autocomplete="off" ngNativeValidate>
+
+    
+
       <!-- Username -->
       <mat-form-field class="form-group">
         <input
@@ -274,7 +277,7 @@
         </mat-error>
       </mat-form-field>
 
-      <mat-checkbox class="terms" required>
+      <mat-checkbox [(ngModel)]="terms" [ngModelOptions]="{standalone: true}" class="terms" required=true>
         Accept
         <a href="http://localhost:4200/user/all" target="_blank" 
           >Terms and Conditions</a
