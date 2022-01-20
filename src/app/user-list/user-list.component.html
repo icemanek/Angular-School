@@ -1,61 +1,61 @@
 <div class="whole-table">
-<mat-form-field>  
-  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtr" autocomplete="off">  
-</mat-form-field>  
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtr" autocomplete="off">
+</mat-form-field>
 
 <table mat-table [dataSource]="dataSource" matSort>
-  <ng-container matColumnDef="id">
+  <ng-container matColumnDef="[UserEnum.Id]">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
-    <td mat-cell *matCellDef="let user">{{user.id}}</td>
+    <td mat-cell *matCellDef="let user">{{user[UserEnum.Id]}}</td>
   </ng-container>
 
   <ng-container matColumnDef="username">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Username</th>
-    <td mat-cell *matCellDef="let user">{{user.username}}</td>
+    <td mat-cell *matCellDef="let user">{{user[UserEnum.Username]}}</td>
   </ng-container>
 
   <ng-container matColumnDef="firstName">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
-    <td mat-cell *matCellDef="let user">{{user.firstName}}</td>
+    <td mat-cell *matCellDef="let user">{{user[UserEnum.FirstName]}}</td>
   </ng-container>
 
   <ng-container matColumnDef="lastName">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</th>
-    <td mat-cell *matCellDef="let user">{{user.lastName}}</td>
+    <td mat-cell *matCellDef="let user">{{user[UserEnum.LastName]}}</td>
   </ng-container>
 
   <ng-container matColumnDef="email">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
-    <td mat-cell *matCellDef="let user">{{user.email}}</td>
+    <td mat-cell *matCellDef="let user">{{user[UserEnum.Email]}}</td>
   </ng-container>
 
   <ng-container matColumnDef="gender">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Gender</th>
-    <td mat-cell *matCellDef="let user">{{user.gender}}</td>
+    <td mat-cell *matCellDef="let user">{{user[UserEnum.Gender]}}</td>
   </ng-container>
 
   <ng-container matColumnDef="licence">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Licence</th>
-    <td mat-cell *matCellDef="let user">{{user.licence}}</td>
+    <td mat-cell *matCellDef="let user">{{user[UserEnum.Licence]}}</td>
   </ng-container>
 
   <ng-container matColumnDef="birth">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Birth</th>
-    <td mat-cell *matCellDef="let user">{{user.birth}}</td>
+    <td mat-cell *matCellDef="let user">{{user[UserEnum.Birth]}}</td>
   </ng-container>
 
   <ng-container matColumnDef="created">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Created</th>
-    <td mat-cell *matCellDef="let user">{{user.created}}</td>
+    <td mat-cell *matCellDef="let user">{{user[UserEnum.Created]}}</td>
   </ng-container>
 
   <ng-container matColumnDef="enabled">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Enabled</th>
-    <td mat-cell *matCellDef="let user">{{user.enabled}}</td>
+    <td mat-cell *matCellDef="let user">{{user[UserEnum.Enabled]}}</td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>  
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </div>

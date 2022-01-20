@@ -4,7 +4,7 @@
   <div class="card-body">
     <form (ngSubmit)="registerNewUser()" #userForm="ngForm" autocomplete="off" ngNativeValidate>
 
-    
+
 
       <!-- Username -->
       <mat-form-field class="form-group">
@@ -46,7 +46,7 @@
         <input
           matInput
           type="text"
-          [(ngModel)]="user.firstName"
+          [(ngModel)]="user[UserEnum.FirstName]"
           class="form-control"
           id="firstName"
           name="firstName"
@@ -81,7 +81,7 @@
         <input
           matInput
           type="text"
-          [(ngModel)]="user.lastName"
+          [(ngModel)]="user[UserEnum.LastName]"
           minlength="2"
           maxlength="30"
           class="form-control"
@@ -106,7 +106,7 @@
           <mat-error *ngIf="lastName.errors.minlength">
             <strong>Name must be at least 2 characters long</strong>
           </mat-error>
-          
+
         </mat-error>
       </mat-form-field>
 
@@ -124,7 +124,7 @@
           placeholder="Password"
           required
           #password="ngModel"
-          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"> 
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
 
        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
 
@@ -166,7 +166,7 @@
           name="confirmPassword"
           required
           #confirmPassword="ngModel"
-          compare="password"/>    
+          compare="password"/>
 
         <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
 
@@ -241,11 +241,11 @@
           <mat-option class="bad-option" value="No" disabled>I don't have - Sorry, you can't register!</mat-option>
 
         </mat-select>
-        
+
         <mat-error *ngIf="licence.hasError('required')">
           <strong>Licence is required</strong>
         </mat-error>
-      
+
       </mat-form-field>
 
       <!-- Birth -->
@@ -279,7 +279,7 @@
 
       <mat-checkbox [(ngModel)]="terms" [ngModelOptions]="{standalone: true}" class="terms" required=true>
         Accept
-        <a href="http://localhost:4200/user/all" target="_blank" 
+        <a href="http://localhost:4200/user/all" target="_blank"
           >Terms and Conditions</a
         ></mat-checkbox>
 

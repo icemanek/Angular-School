@@ -9,14 +9,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
- import {MatExpansionModule} from '@angular/material/expansion';
- import {MatListModule} from '@angular/material/list';
- import {MatStepperModule} from '@angular/material/stepper';
- import {MatTabsModule} from '@angular/material/tabs';
- import {MatTreeModule} from '@angular/material/tree';
- import { MatButtonModule } from '@angular/material/button';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatListModule} from '@angular/material/list';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatTreeModule} from '@angular/material/tree';
+import { MatButtonModule } from '@angular/material/button';
 import { FooterBarComponent } from './footer-bar/footer-bar.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { A11yModule } from '@angular/cdk/a11y';
@@ -34,16 +34,16 @@ import { CoursesPageComponent } from './courses-page/courses-page.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { UserRegisterComponent } from './user-register/user-register.component';
-import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select'
-import { MatCheckboxModule } from '@angular/material/checkbox'
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CompareValidatorDirective } from './shared/compare-validator.directive';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { MatDialogModule } from "@angular/material/dialog";
+import { MatDialogModule } from '@angular/material/dialog';
 import { ErrorDialogComponentComponent } from './error-dialog-component/error-dialog-component.component';
-import { ToastrModule } from "ngx-toastr";
+import { ToastrModule } from 'ngx-toastr';
 
 const appRoutes: Routes = [
 
@@ -137,7 +137,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     ToastrModule.forRoot({
       timeOut: 7000,
-      positionClass: "toast-center-center",
+      positionClass: 'toast-center-center',
       preventDuplicates: true,
     }),
   ],
@@ -164,7 +164,7 @@ const appRoutes: Routes = [
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
-    
+
     ],
   providers: [UserService],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

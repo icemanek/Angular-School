@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ErrorDialogComponentComponent } from '../error-dialog-component/error-dialog-component.component';
+import {User, UserEnum} from '../user/user';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { ErrorDialogComponentComponent } from '../error-dialog-component/error-d
   templateUrl: './user-register.component.html',
   styleUrls: ['./user-register.component.css']
 })
-export class UserRegisterComponent{
+export class UserRegisterComponent {
   terms: boolean;
   hide = true;
   user: User;
@@ -21,13 +21,14 @@ export class UserRegisterComponent{
   created: Date;
   password: string;
   confirmPassword: string;
+  UserEnum = UserEnum;
 
   constructor(private route: ActivatedRoute, private router: Router, private userService: UserService) {
+    // @ts-ignore
     this.user = new User();
 
 // Date section
-
-    this.user.created = new Date(Date.now());
+    this.user[UserEnum.Created] = new Date(Date.now());
     this.minDate = new Date(Date.now());
     this.maxDate = new Date(Date.now());
 
@@ -49,8 +50,8 @@ export class UserRegisterComponent{
       result => this.gotoUserList(),
       //  error => this.errrr.openDialog(error.error.message)
        // error => window.alert(error.error.message)
-        
-        );}
+
+        ); }
 
 
   gotoUserList() {
